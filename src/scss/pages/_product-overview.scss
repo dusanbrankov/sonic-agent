@@ -74,16 +74,16 @@
 }
 
 .products__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,350px), 1fr));
+  gap: $space-s;
   margin-block-end: $space-m;
-
-  & > ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%,350px), 1fr));
-    gap: $space-s;
-  }
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-neutral-4;
   border-radius: 0.625rem;
   overflow: hidden;
 }
@@ -101,7 +101,6 @@
 .card__content {
   display: grid;
   row-gap: $space-xs;
-  background-color: $color-neutral-4;
   padding: $space-s;
 }
 
@@ -122,13 +121,14 @@
 
   & span {
     display: inline-block;
-    padding-inline-start: 26px;
+    padding-inline-start: $space-xs;
   }
 }
 
 .card__price {
   font-size: $step--1;
   font-weight: 700;
+  margin-bottom: clamp(1.13rem, 0.99rem + 0.65vw, 1.5rem);
 
   & span {
     font-weight: 400;
@@ -136,15 +136,20 @@
 }
 
 .card__link {
-  display: block;
-  font-size: $step--1;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
-  padding-block: $space-2xs;
-  // padding-block: 0.7rem;
-  border-radius: 0.375rem;
-  background-color: #f5ce0a;
+  margin-top: auto;
+  padding: 0 $space-s $space-s;
+
+  & > a {
+    display: block;
+    font-size: $step--1;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    padding-block: $space-2xs;
+    // padding-block: 0.7rem;
+    border-radius: 0.375rem;
+    background-color: #f5ce0a;
+  }
 }
 
 .promo__title {

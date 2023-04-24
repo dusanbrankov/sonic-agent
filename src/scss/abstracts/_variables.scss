@@ -11,8 +11,10 @@ $font-stack: ($base-font, 'Helvetica', 'Arial', sans-serif);
 
 $color-primary-1:   hsl(50, 92%, 50%);
 $color-neutral-1:   hsl(0, 0%, 95%);
+$color-neutral-101:   hsl(0, 0%, 63%);
 $color-neutral-2:   hsl(0, 0%, 25%);
 $color-neutral-3:   hsl(0, 0%, 20%);
+$color-neutral-301:   hsl(0, 0%, 17%);
 $color-neutral-4:   hsl(0, 0%, 13%);
 $color-copy-1:      $color-neutral-1;
 
@@ -66,3 +68,5 @@ $space-3xl: clamp(6.75rem, calc(5.97rem + 3.91vw), 9.00rem);
  *---------------------------------------------------------*/
 
  $wrapper-padding: 24px;
+
+ $transition-1: 185ms cubic-bezier(.79,.14,.15,.86);

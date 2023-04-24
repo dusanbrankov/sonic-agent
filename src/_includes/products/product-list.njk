@@ -1,5 +1,6 @@
 <div class="products region">
   <div class="wrapper">
+
     <nav class="breadcrumbs">
       <ol class="bare-list">
         <li><a href="/">Home</a></li>
@@ -8,36 +9,32 @@
         <li>{{ package }}</li>
       </ol>
     </nav>
+
     <div class="products__list">
-      <ul class="bare-list">
-        {% for product in collections.products %}
-        <li>
-          <article class="card">
-            {# <div class="card__img">
-              <img src="/assets/img/{{ product.data.thumbnail }}" alt="">
-            </div> #}
-            <picture class="card__img">
-              <source srcset="/assets/img/{{ product.data.thumbnail }}.avif" type="image/avif">
-              <source srcset="/assets/img/{{ product.data.thumbnail }}.webp" type="image/webp">
-              <img src="/assets/img/{{ product.data.thumbnail }}.jpg" alt="">
-            </picture>
-            <div class="card__content">
-              <h2 class="card__title">{{ product.data.title }}</h2>
-              <ul class="card__list">
-                {% if product.data.capacity %}
-                <li><span>For events with up to {{ product.data.capacity }} guests</span></li>
-                {% endif %}
-                <li><span>Ideal for smaller events</span></li>
-                <li><span>Including delivery and assembly</span></li>
-              </ul>
-              <p class="card__price">{{ product.data.price }} <span>/ day</span></p>
-              <a href="{{ product.url }}" class="card__link">View Details</a>
-            </div>
-            </article>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% include 'products/contact.njk' %}
+      {% for product in collections.products %}
+      <article class="card">
+        <picture class="card__img">
+          <source srcset="/assets/img/{{ product.data.thumbnail }}.avif" type="image/avif">
+          <source srcset="/assets/img/{{ product.data.thumbnail }}.webp" type="image/webp">
+          <img src="/assets/img/{{ product.data.thumbnail }}.jpg" alt="">
+        </picture>
+
+        <div class="card__content">
+          <h2 class="card__title">{{ product.data.title }}</h2>
+          <ul class="card__list bare-list">
+            {% for item in product.data.list %}
+            <li><span>{{ item }}</span></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="card__link">
+          <p class="card__price">{{ product.data.price }} <span>/ day</span></p>
+          <a href="{{ product.url }}" class="card__link">View Details</a>
+        </div>
+
+      </article>
+      {% endfor %}
     </div>
+      {% include 'products/contact.njk' %}
   </div>
+</div>
