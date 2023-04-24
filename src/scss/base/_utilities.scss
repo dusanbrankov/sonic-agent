@@ -48,11 +48,11 @@ body { // :has(.full-bleed)
   & li {
     list-style-type: none;
 
-    &::before {
-      content: '\200B';   /* [1] */
-      display: block;     /* [2] */
-      height: 0;          /* [2] */
-    }
+    // &::before {
+    //   content: '\200B';   /* [1] */
+    //   display: block;     /* [2] */
+    //   height: 0;          /* [2] */
+    // }
   }
 }
 

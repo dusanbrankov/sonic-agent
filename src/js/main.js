@@ -6,9 +6,6 @@ const menuButtonLabel = document.querySelector('.menu-btn__label');
 const navItems = document.querySelectorAll('.primary-nav__item');
 
 menuButton.addEventListener('click', () => {
-  navItems.forEach(navItem => {
-    navItem.classList.toggle('wrapper');
-  });
   body.classList.toggle('is-active');
   if (body.classList.contains('is-active')) {
     this.setAttribute('aria-expanded', 'false');
@@ -17,6 +14,16 @@ menuButton.addEventListener('click', () => {
     this.setAttribute('aria-expanded', 'true');
     menuButtonLabel.innerHTML = 'Close main menu';
   }
+});
+
+// Toggle mobile submenu
+
+const submenuButtons = document.querySelectorAll('.submenu-toggle');
+
+submenuButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('is-active');
+  });
 });
 
 // Get height of site header:
