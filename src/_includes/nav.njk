@@ -1,0 +1,24 @@
+<nav class="primary-nav" aria-label="primary">
+  <button class="menu-btn" aria-expanded="false" aria-controls="menu">
+    <span class="menu-btn__icon"></span>
+    <span class="menu-btn__label visually-hidden">Open main menu</span>
+  </button>
+  {% set navPages = collections.all | eleventyNavigation %}
+  {% macro renderNavListItem(entry) -%}
+    <li class="primary-nav__item {% if entry.children.length %}has-children{% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
+      <a href="{{ entry.url }}" class="primary-nav__link">{{ entry.title }}</a>
+      {%- if entry.children.length -%}
+        <ul class="primary-nav__list">
+          {%- for child in entry.children %}
+            {{ renderNavListItem(child) }}
+          {% endfor -%}
+        </ul>
+      {%- endif -%}
+    </li>
+  {%- endmacro %}
+  <ul id="menu" class="primary-nav__list bare-list">
+    {%- for entry in navPages %}
+      {{ renderNavListItem(entry) }}
+    {%- endfor -%}
+  </ul>
+</nav>

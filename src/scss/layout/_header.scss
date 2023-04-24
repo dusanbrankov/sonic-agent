@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.site-header {
+  background-color: $color-primary-1;
+
+  & > :where(.wrapper) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // height: clamp(3.4375rem, 10vw, 4.25rem);
+  }
+}
+
+.logo {
+  width: clamp(170px, 30vw, 220px);
+}
