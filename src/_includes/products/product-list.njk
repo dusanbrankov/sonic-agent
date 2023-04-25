@@ -1,3 +1,21 @@
+---
+layout: "base.njk"
+---
+
+<header class="page-header">
+  <div class="wrapper">
+    <div class="page-header__text">
+      <h1 class="page-header__title">{{ title }}</h1>
+      <p class="page-header__summary">{{ description }}</p>
+    </div>
+    <picture class="page-header__img">
+      <source srcset="/assets/img/{{ image }}.avif" type="image/avif">
+      <source srcset="/assets/img/{{ image }}.webp" type="image/webp">
+      <img src="/assets/img/{{ image }}.jpg" alt="">
+    </picture>
+  </div>
+</header>
+
 <div class="products region">
   <div class="wrapper">
 
@@ -11,30 +29,14 @@
     </nav>
 
     <div class="products__list">
-      {% for product in collections.products %}
-      <article class="card">
-        <picture class="card__img">
-          <source srcset="/assets/img/{{ product.data.thumbnail }}.avif" type="image/avif">
-          <source srcset="/assets/img/{{ product.data.thumbnail }}.webp" type="image/webp">
-          <img src="/assets/img/{{ product.data.thumbnail }}.jpg" alt="">
-        </picture>
-
-        <div class="card__content">
-          <h2 class="card__title">{{ product.data.title }}</h2>
-          <ul class="card__list bare-list">
-            {% for item in product.data.list %}
-            <li><span>{{ item }}</span></li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="card__link">
-          <p class="card__price">{{ product.data.price }} <span>/ day</span></p>
-          <a href="{{ product.url }}" class="card__link">View Details</a>
-        </div>
-
-      </article>
-      {% endfor %}
+      {{ content | safe }}
     </div>
-      {% include 'products/contact.njk' %}
+      
+    <div class="promo">
+      <h2 class="promo__title">Get a customized offer</h2>
+      <p class="promo__p">Get in touch with us today to see for yourself how our <strong>dependable</strong> and <strong>professional</strong> team can help ensure your event to be both <strong>seamless</strong> and <strong>memorable</strong>.</p>
+      <a href="#0" class="promo__link">Contact us</a>
+    </div>
+
   </div>
 </div>
