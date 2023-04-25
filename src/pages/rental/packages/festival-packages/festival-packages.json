@@ -1,6 +1,0 @@
-{
-  "permalink": "/rental/packages/festival/{{ title | slugify }}/",
-  "tags": [
-    "products"
-  ]
-}
