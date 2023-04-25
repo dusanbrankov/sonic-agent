@@ -18,11 +18,11 @@ menuButton.addEventListener('click', () => {
 
 // Toggle mobile submenu
 
-const submenuButtons = document.querySelectorAll('.submenu-toggle');
+const submenuButtons = document.querySelectorAll('.submenu-btn');
 
 submenuButtons.forEach(button => {
     button.addEventListener('click', () => {
-        button.classList.toggle('is-active');
+        button.classList.toggle('submenu-btn--is-active');
     });
 });
 
