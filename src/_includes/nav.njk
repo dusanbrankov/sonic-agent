@@ -5,27 +5,27 @@
   </button>
   {% set navPages = collections.all | eleventyNavigation %}
   {% macro renderNavListItem(entry) -%}
-    <li class="primary-nav__item {% if entry.children.length %}has-children{% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
-      {%- if entry.children.length -%}
-        <div class="submenu-toggle">
-          <button class="submenu-toggle__btn">{{ entry.title }}</button>
-          <svg class="submenu-toggle__icon" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 48"><defs><clipPath clipPathUnits="userSpaceOnUse" id="a"><path d="M0 .43h600v350H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(.13333 0 0 -.13333 0 48)"><path d="M298.59 10c-10.699 0-21.399 4.102-29.531 12.23L12.269 279.02c-16.37 16.371-16.37 42.859 0 59.179 16.32 16.289 42.81 16.289 59.141 0L298.59 110.98l227.23 227.18c16.328 16.328 42.809 16.328 59.141 0 16.328-16.32 16.328-42.808 0-59.14L328.16 22.23C320.039 14.06 309.301 10 298.59 10Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none"/></g></svg>
-        </div>
-      {% else %}
-        <a href="{{ entry.url }}" class="primary-nav__link {% if entry.children.length %}has-children{% endif %}">{{ entry.title }}</a>
-      {%- endif -%}
-      {%- if entry.children.length -%}
-        <ul class="primary-nav__list">
-          {%- for child in entry.children %}
-            {{ renderNavListItem(child) }}
-          {% endfor -%}
-        </ul>
-      {%- endif -%}
-    </li>
+  <li class="primary-nav__item {% if entry.children.length %}has-children{% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
+    {%- if entry.children.length -%}
+    <div class="submenu-toggle">
+      <button class="submenu-toggle__btn">{{ entry.title }}</button>
+      <svg class="submenu-toggle__icon" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 48"><defs><clipPath clipPathUnits="userSpaceOnUse" id="a"><path d="M0 .43h600v350H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(.13333 0 0 -.13333 0 48)"><path d="M298.59 10c-10.699 0-21.399 4.102-29.531 12.23L12.269 279.02c-16.37 16.371-16.37 42.859 0 59.179 16.32 16.289 42.81 16.289 59.141 0L298.59 110.98l227.23 227.18c16.328 16.328 42.809 16.328 59.141 0 16.328-16.32 16.328-42.808 0-59.14L328.16 22.23C320.039 14.06 309.301 10 298.59 10Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none"/></g></svg>
+    </div>
+    {% else %}
+    <a href="{{ entry.url }}" class="primary-nav__link {% if entry.children.length %}has-children{% endif %}">{{ entry.title }}</a>
+    {%- endif -%}
+    {%- if entry.children.length -%}
+    <ul class="primary-nav__list">
+      {%- for child in entry.children %}
+      {{ renderNavListItem(child) }}
+      {% endfor -%}
+    </ul>
+    {%- endif -%}
+  </li>
   {%- endmacro %}
   <ul id="menu" class="primary-nav__list bare-list">
     {%- for entry in navPages %}
-      {{ renderNavListItem(entry) }}
+    {{ renderNavListItem(entry) }}
     {%- endfor -%}
   </ul>
 </nav>
