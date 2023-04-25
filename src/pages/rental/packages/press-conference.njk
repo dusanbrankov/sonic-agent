@@ -1,13 +1,14 @@
 ---
 title: Press Conference Packages
 description: We supply festival power, lighting, sound and video systems for events across Europe. These packages are designed to give you ideas of the sort of setup that suits your requirements.
+image: "header-home"
 package: Press Conference
 eleventyNavigation:
   key: Press Conference
   parent: Packages
-image: "header-home"
+layout: "products/product-list.njk"
 ---
 
-{% include 'products/header.njk' %}
-
-{% include 'products/product-list.njk' %}
+{% for i in collections.press_conference %}
+  {% include "products/product-list-item.njk" %}
+{% endfor %}

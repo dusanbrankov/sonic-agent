@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/sound/dj-equipment/{{ title | slugify }}/",
+  "tags": [
+    "dj_equipment"
+  ]
+}

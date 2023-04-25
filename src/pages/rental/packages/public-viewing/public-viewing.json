@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/packages/public-viewing/{{ title | slugify }}/",
+  "tags": [
+    "public_viewing"
+  ]
+}

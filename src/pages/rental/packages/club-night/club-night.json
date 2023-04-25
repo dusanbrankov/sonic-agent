@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/packages/club-night/{{ title | slugify }}/",
+  "tags": [
+    "club_night"
+  ]
+}

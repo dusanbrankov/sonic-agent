@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/packages/congress/{{ title | slugify }}/",
+  "tags": [
+    "congress"
+  ]
+}

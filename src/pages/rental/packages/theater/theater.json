@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/packages/theater/{{ title | slugify }}/",
+  "tags": [
+    "theater"
+  ]
+}
