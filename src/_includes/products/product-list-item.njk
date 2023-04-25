@@ -1,0 +1,19 @@
+<article class="card">
+  <picture class="card__img">
+    <source srcset="/assets/img/{{ i.data.thumbnail }}.avif" type="image/avif">
+    <source srcset="/assets/img/{{ i.data.thumbnail }}.webp" type="image/webp">
+    <img src="/assets/img/{{ i.data.thumbnail }}.jpg" alt="">
+  </picture>
+  <div class="card__content">
+    <h2 class="card__title">{{ i.data.title }}</h2>
+    <ul class="card__list bare-list">
+      {% for item in i.data.list %}
+        <li><span>{{ item }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="card__link">
+    <p class="card__price">{{ i.data.price }} <span>/ day</span></p>
+    <a href="{{ i.url }}" class="card__link">View Details</a>
+  </div>
+</article>
