@@ -142,12 +142,12 @@
 
 .primary-nav__link,
 .submenu-btn {
+  user-select: none;
 
   @include media-max($viewport-m) {
     padding-block: $space-xs;
     padding-inline: $wrapper-padding;
     border-bottom: 1px solid $color-neutral-2;
-    user-select: none;
   }
 }
 
