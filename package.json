@@ -11,8 +11,8 @@
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass --no-source-map ./src/scss:dist/css",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*",
+    "start": "rm -r dist/ && npm-run-all build:sass --parallel watch:*",
+    "build": "rm -r dist/ && npm-run-all build:*",
     "postbuild": "postcss ./dist/css/*.css -u postcss-preset-env cssnano -r --no-map"
   },
   "browserslist": [
