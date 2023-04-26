@@ -1,0 +1,195 @@
+@use '../abstracts' as *;
+
+.main-nav__menu-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $icon-menu-size;
+  height: $icon-menu-size;
+
+  @include media-min($viewport-m) {
+    display: none;
+  }
+
+  &-icon {
+
+    &,
+    &::before,
+    &::after {
+      display: block;
+      width: $line-menu-width;
+      height: $line-menu-height;
+      background-color: $color-neutral-4;
+      border-radius: 100vmax;
+    }
+  
+    &::before,
+    &::after {
+      content: '';
+      transition: transform $transition-1;
+    }
+  
+    &::before {
+      transform: translateY(-1 * ($line-menu-space + $line-menu-height));
+  
+      .is-active & {
+        transform: translateY(-2px) rotate(45deg);
+      }
+    }
+  
+    &::after {
+      transform: translateY($line-menu-space);
+  
+      .is-active & {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+  
+    .is-active & {
+      height: 0;
+    }
+  }
+}
+
+.main-nav__list {
+  display: none;
+  font-size: $step-1;
+  font-weight: 700;
+  color: $color-copy-1;
+
+  @include media-min($viewport-m) {
+  display: flex;
+  column-gap: $space-s;
+  font-size: $step--1;
+  color: $color-neutral-3;
+  }
+}
+
+.main-nav__item--has-submenu {
+
+  & > :where(.main-nav__list) {
+    display: none;
+  }
+}
+
+/* <ul> Level 0 */
+.main-nav > .main-nav__list {
+ 
+  @include media-max($viewport-m) {
+    flex-direction: column;
+    position: absolute;
+    inset: auto 0;
+    z-index: 999;
+    background-color: $color-neutral-4;
+
+    .is-active & {
+      display: flex;
+    }
+  }
+}
+
+/* <ul> Level 1 */
+.main-nav > .main-nav__list > .main-nav__item > .main-nav__list {
+  background-color: $color-neutral-301;
+
+  @include media-min($viewport-m) {
+
+    & .main-nav__link {
+      display: block;
+    }
+
+    & .main-nav__submenu-toggle {
+      display: flex;
+      justify-content: space-between;
+
+      &-icon {
+        fill: $color-neutral-1;
+      }
+    }
+
+    & .main-nav__link,
+    & .main-nav__submenu-toggle {
+      color: $color-copy-1;
+      padding: $space-xs;
+      border-bottom: 1px solid $color-neutral-2;
+    }
+  }
+}
+
+/* <ul> Level 2 */
+.main-nav > .main-nav__list > .main-nav__item > .main-nav__list > .main-nav__item > .main-nav__list {
+  font-weight: 400;
+  background-color: $color-neutral-3;
+}
+
+/* Need to fix: ':where()' doesn't work here, don't know why! */
+.main-nav > .main-nav__list > .main-nav__item--has-submenu {
+
+  @include media-min($viewport-m) {
+    position: relative;
+
+    & > .main-nav__list {
+      position: absolute;
+      top: 60px;
+      z-index: 999;
+      min-width: 14.25rem;
+      border: 1px solid $color-neutral-2;
+      border-radius: 0.5em;
+    }
+  }
+}
+
+.main-nav__link,
+.main-nav__submenu-toggle {
+  user-select: none;
+
+  @include media-max($viewport-m) {
+    padding-block: $space-xs;
+    padding-inline: $wrapper-padding;
+    border-bottom: 1px solid $color-neutral-2;
+  }
+}
+
+.main-nav__link {
+  
+  @include media-max($viewport-m) {
+    display: block;
+  }
+}
+
+.main-nav__submenu-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  @include media-max($viewport-m) {
+    justify-content: space-between;
+  }
+
+  @include media-min($viewport-m) {
+    gap: 0.5rem;
+  }
+
+  &-icon {
+    fill: $color-neutral-1;
+    width: 1.125rem;
+    transform: rotate(0deg);
+    transition: transform $transition-1;
+
+    @include media-min($viewport-m) {
+      fill: $color-neutral-4;
+      width: 14px;
+    }
+  }
+
+  &--is-active {
+
+    & > .main-nav__submenu-toggle-icon {
+      transform: rotate(180deg);
+    }
+  
+    & ~ .main-nav__list {
+      display: block;
+    }
+  }
+}
