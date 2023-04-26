@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/video/cameras/{{ title | slugify }}/",
+  "tags": [
+    "cameras"
+  ]
+}

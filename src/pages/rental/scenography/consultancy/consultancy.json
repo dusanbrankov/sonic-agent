@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/scenography/consultancy/{{ title | slugify }}/",
+  "tags": [
+    "consultancy"
+  ]
+}

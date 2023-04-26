@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/scenography/decorations/{{ title | slugify }}/",
+  "tags": [
+    "decorations"
+  ]
+}

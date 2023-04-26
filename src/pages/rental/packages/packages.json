@@ -1,3 +1,3 @@
 {
-  "permalink": "/rental/packages/{{ package | slugify }}/"
+  "permalink": "/rental/{{ eleventyNavigation.parent | slugify }}/{{ package | slugify }}/"
 }

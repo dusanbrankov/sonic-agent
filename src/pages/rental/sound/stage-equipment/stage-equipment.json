@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/sound/stage-equipment/{{ title | slugify }}/",
+  "tags": [
+    "stage_equipment"
+  ]
+}

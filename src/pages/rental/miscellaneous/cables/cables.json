@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/miscellaneous/cables/{{ title | slugify }}/",
+  "tags": [
+    "cables"
+  ]
+}

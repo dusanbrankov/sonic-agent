@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/video/projectors/{{ title | slugify }}/",
+  "tags": [
+    "projectors"
+  ]
+}

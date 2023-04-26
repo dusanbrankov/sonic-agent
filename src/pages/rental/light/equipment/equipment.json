@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/light/equipment/{{ title | slugify }}/",
+  "tags": [
+    "equipment"
+  ]
+}

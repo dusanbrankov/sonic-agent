@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/scenography/miscellaneous/{{ title | slugify }}/",
+  "tags": [
+    "scenography_misc"
+  ]
+}

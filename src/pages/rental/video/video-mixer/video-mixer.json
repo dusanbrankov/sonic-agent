@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/video/video-mixer/{{ title | slugify }}/",
+  "tags": [
+    "video_mixer"
+  ]
+}

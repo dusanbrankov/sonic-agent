@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/light/specials/{{ title | slugify }}/",
+  "tags": [
+    "specials"
+  ]
+}

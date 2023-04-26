@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/sound/microphones/{{ title | slugify }}/",
+  "tags": [
+    "microphones"
+  ]
+}

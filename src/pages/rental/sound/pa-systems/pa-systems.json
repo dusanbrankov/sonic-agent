@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/sound/pa-systems/{{ title | slugify }}/",
+  "tags": [
+    "pa_systems"
+  ]
+}

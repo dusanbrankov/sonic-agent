@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/miscellaneous/power-distribution/{{ title | slugify }}/",
+  "tags": [
+    "power_distribution"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/sound/recording/{{ title | slugify }}/",
+  "tags": [
+    "recording"
+  ]
+}

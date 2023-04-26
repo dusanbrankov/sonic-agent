@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/sound/speakers/{{ title | slugify }}/",
+  "tags": [
+    "speakers"
+  ]
+}

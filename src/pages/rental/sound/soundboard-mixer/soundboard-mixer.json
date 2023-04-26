@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/sound/soundboard-mixer/{{ title | slugify }}/",
+  "tags": [
+    "soundboard_mixer"
+  ]
+}

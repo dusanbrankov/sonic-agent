@@ -1,0 +1,6 @@
+{
+  "permalink": "/rental/video/canvas/{{ title | slugify }}/",
+  "tags": [
+    "canvas"
+  ]
+}
