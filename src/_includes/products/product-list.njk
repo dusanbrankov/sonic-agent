@@ -24,7 +24,11 @@ layout: "base.njk"
         <li><a href="/">Home</a></li>
         <li><a href="#0">Rental</a></li>
         <li><a href="#0">{{ eleventyNavigation.parent }}</a></li>
-        <li>{{ package }}</li>
+        {% if package %}
+          <li>{{ package }}</li>
+        {% else %}
+          <li>{{ title }}</li>
+        {% endif %}
       </ol>
     </nav>
 
