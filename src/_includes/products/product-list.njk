@@ -2,13 +2,13 @@
 layout: "base.njk"
 ---
 
-<header class="page-header">
+<header class="hero">
   <div class="wrapper">
-    <div class="page-header__text">
-      <h1 class="page-header__title">{{ title }}</h1>
-      <p class="page-header__summary">{{ description }}</p>
+    <div class="hero__text">
+      <h1 class="hero__title">{{ title }}</h1>
+      <p class="hero__summary">{{ description }}</p>
     </div>
-    <picture class="page-header__img">
+    <picture class="hero__img">
       <source srcset="/assets/img/{{ image }}.avif" type="image/avif">
       <source srcset="/assets/img/{{ image }}.webp" type="image/webp">
       <img src="/assets/img/{{ image }}.jpg" alt="">
@@ -20,7 +20,7 @@ layout: "base.njk"
   <div class="wrapper">
 
     <nav class="breadcrumbs">
-      <ol class="bare-list">
+      <ol role="list">
         <li><a href="/">Home</a></li>
         <li><a href="#0">Rental</a></li>
         <li><a href="#0">{{ eleventyNavigation.parent }}</a></li>

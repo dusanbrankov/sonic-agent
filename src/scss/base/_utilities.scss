@@ -4,16 +4,26 @@
   #LAYOUT
  *---------------------------------------------------------*/
 
-/* [1] Make element occupy entire viewport width
+/* Make element occupy entire viewport width
    https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */
 
-body { // :has(.full-bleed)
+/* body:has(.full-bleed) {
   overflow-x: hidden;
 }
 
 .full-bleed {
   width: 100vw;                               
   margin-left: calc(50% - 50vw);
+} */
+
+/* Vertical spacing for page sections */
+
+.region {
+  padding-block: $space-l;
+
+  &--small {
+    padding-block: $space-xs;
+  }
 }
 
 /*---------------------------------------------------------*
@@ -31,35 +41,4 @@ body { // :has(.full-bleed)
   height: 1px;
   width: 1px;
   overflow: hidden;
-}
-
-/* Some versions of VoiceOver don't announce unordered
-   lists when `list-style-type` is set to `none`
-   https://gerardkcohen.me/writing/2017/voiceover-list-style-type.html */
-
-/* [1] Add zero-width space, so parent `<ul>` is announced
-       with a role of `list` again
-   [2] Prevent the added zero-width space from affecting
-       the layout */
-
-.bare-list {
-  padding: 0;
-
-  & li {
-    list-style-type: none;
-
-    // &::before {
-    //   content: '\200B';   /* [1] */
-    //   display: block;     /* [2] */
-    //   height: 0;          /* [2] */
-    // }
-  }
-}
-
-.region {
-  padding-block: $space-l;
-
-  &--small {
-    padding-block: $space-xs;
-  }
 }
