@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 .hero {
-  padding-block-start: $space-l;
 
   & > :where(.wrapper) {
     display: grid;
@@ -35,7 +34,6 @@
     border-radius: 0.625rem;
     aspect-ratio: 3 / 2;
     object-fit: cover;
-    transform: translateY($space-m);
   }
 }
 
@@ -170,18 +168,12 @@
 
 .promo__link {
   display: inline-block;
-  /* display: flex;
-  align-items: center;
-  width: fit-content;
-  height: 2.9em; */
   font-size: $step--1;
   font-weight: 700;
   line-height: 1;
-  // text-align: center;
   color: $color-neutral-1;
   padding: 1em 2em 1em;
-  // padding-inline: 2em;
-  border: 1px solid $color-primary-1;
+  border: 1px solid $color-neutral-1;
   border-radius: 0.375rem;
   background: $color-neutral-4;
 }
