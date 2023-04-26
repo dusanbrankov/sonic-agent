@@ -23,7 +23,7 @@ body { // :has(.full-bleed)
 /* Visually hide element, but keep it accessible for screen
    readers */
 
-.visually-hidden {
+.sr-only {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0;

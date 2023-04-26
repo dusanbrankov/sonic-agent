@@ -1,9 +1,9 @@
 // Toggle mobile menu
 
 const body = document.querySelector('body');
-const menuButton = document.querySelector('.menu-btn');
-const menuButtonLabel = document.querySelector('.menu-btn__label');
-const navItems = document.querySelectorAll('.primary-nav__item');
+const menuButton = document.querySelector('.main-nav__menu-toggle');
+const menuButtonLabel = document.querySelector('.main-nav__menu-toggle-label');
+const navItems = document.querySelectorAll('.main-nav__item');
 
 menuButton.addEventListener('click', () => {
     body.classList.toggle('is-active');
@@ -18,11 +18,11 @@ menuButton.addEventListener('click', () => {
 
 // Toggle mobile submenu
 
-const submenuButtons = document.querySelectorAll('.submenu-btn');
+const submenuButtons = document.querySelectorAll('.main-nav__submenu-toggle');
 
 submenuButtons.forEach(button => {
     button.addEventListener('click', () => {
-        button.classList.toggle('submenu-btn--is-active');
+        button.classList.toggle('main-nav__submenu-toggle--is-active');
     });
 });
 
@@ -30,6 +30,6 @@ submenuButtons.forEach(button => {
 
 const siteHeader = document.querySelector('.site-header');
 const height = siteHeader.offsetHeight;
-const navList = document.querySelector('.primary-nav__list');
+const navList = document.querySelector('.main-nav__list');
 
-navList.style.top = `${height - 1}px`;
+navList.style.top = `${height}px`;

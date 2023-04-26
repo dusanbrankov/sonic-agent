@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-@use 'base/normalize';
+@use 'base/reset';
 @use 'base/fonts';
 @use 'base/base';
 @use 'base/utilities';
@@ -8,7 +8,7 @@
 
 @use 'layout/wrapper';
 @use 'layout/header';
-@use 'layout/navigation';
+@use 'layout/nav';
 @use 'layout/sidebar';
 @use 'layout/forms';
 @use 'layout/footer';
