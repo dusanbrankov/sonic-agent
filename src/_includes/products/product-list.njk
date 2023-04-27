@@ -4,9 +4,9 @@ layout: "base.njk"
 
 <header class="hero region">
   <div class="wrapper">
-    <div class="hero__text">
+    <div class="hero__content">
       <h1 class="hero__title">{{ title }}</h1>
-      <p class="hero__summary">{{ description }}</p>
+      <p class="hero__text">{{ description }}</p>
     </div>
     <picture class="hero__img">
       <source srcset="/assets/img/{{ image }}.avif" type="image/avif">
@@ -19,7 +19,7 @@ layout: "base.njk"
 <div class="products region">
   <div class="wrapper">
 
-    <nav class="breadcrumbs">
+    <nav class="breadcrumbs" aria-label="breadcrumbs">
       <ol role="list">
         <li><a href="/">Home</a></li>
         <li><a href="#0">Rental</a></li>
@@ -38,8 +38,8 @@ layout: "base.njk"
       
     <div class="promo">
       <h2 class="promo__title">Get a customized offer</h2>
-      <p class="promo__p">Get in touch with us today to see for yourself how our <strong>dependable</strong> and <strong>professional</strong> team can help ensure your event to be both <strong>seamless</strong> and <strong>memorable</strong>.</p>
-      <a href="#0" class="promo__link">Contact us</a>
+      <p class="promo__text">Get in touch with us today to see for yourself how our <strong>dependable</strong> and <strong>professional</strong> team can help ensure your event to be both <strong>seamless</strong> and <strong>memorable</strong>.</p>
+      <a href="#0" class="promo__link">Let's talk!</a>
     </div>
 
   </div>

@@ -7,7 +7,7 @@
   width: $icon-menu-size;
   height: $icon-menu-size;
 
-  @include media-min($viewport-m) {
+  @include media-min($screen-m) {
     display: none;
   }
 
@@ -57,7 +57,7 @@
   font-weight: 700;
   color: $color-copy-1;
 
-  @include media-min($viewport-m) {
+  @include media-min($screen-m) {
   display: flex;
   column-gap: $space-s;
   font-size: $step--1;
@@ -75,7 +75,7 @@
 /* <ul> Level 0 */
 .main-nav > .main-nav__list {
  
-  @include media-max($viewport-m) {
+  @include media-max($screen-m) {
     flex-direction: column;
     position: absolute;
     inset: auto 0;
@@ -92,7 +92,7 @@
 .main-nav > .main-nav__list > .main-nav__item > .main-nav__list {
   background-color: $color-neutral-301;
 
-  @include media-min($viewport-m) {
+  @include media-min($screen-m) {
 
     & .main-nav__link {
       display: block;
@@ -125,7 +125,7 @@
 /* Need to fix: ':where()' doesn't work here, don't know why! */
 .main-nav > .main-nav__list > .main-nav__item--has-submenu {
 
-  @include media-min($viewport-m) {
+  @include media-min($screen-m) {
     position: relative;
 
     & > .main-nav__list {
@@ -143,7 +143,7 @@
 .main-nav__submenu-toggle {
   user-select: none;
 
-  @include media-max($viewport-m) {
+  @include media-max($screen-m) {
     padding-block: $space-xs;
     padding-inline: $wrapper-padding;
     border-bottom: 1px solid $color-neutral-2;
@@ -152,7 +152,7 @@
 
 .main-nav__link {
   
-  @include media-max($viewport-m) {
+  @include media-max($screen-m) {
     display: block;
   }
 }
@@ -162,11 +162,11 @@
   align-items: center;
   width: 100%;
 
-  @include media-max($viewport-m) {
+  @include media-max($screen-m) {
     justify-content: space-between;
   }
 
-  @include media-min($viewport-m) {
+  @include media-min($screen-m) {
     gap: 0.5rem;
   }
 
@@ -176,7 +176,7 @@
     transform: rotate(0deg);
     transition: transform $transition-1;
 
-    @include media-min($viewport-m) {
+    @include media-min($screen-m) {
       fill: $color-neutral-4;
       width: 14px;
     }
