@@ -1,35 +1,33 @@
-// Toggle mobile menu
+// Toggle hamburger menu
 
-const body = document.querySelector('body');
-const menuButton = document.querySelector('.main-nav__menu-toggle');
-const menuButtonLabel = document.querySelector('.main-nav__menu-toggle-label');
-const navItems = document.querySelectorAll('.main-nav__item');
+const menuButton = document.querySelector(".main-nav > button");
 
-menuButton.addEventListener('click', () => {
-  body.classList.toggle('is-active');
-  if (body.classList.contains('is-active')) {
-    this.setAttribute('aria-expanded', 'false');
-    menuButtonLabel.innerHTML = 'Open main menu';
+menuButton.addEventListener("click", function () {
+  if (this.getAttribute("aria-expanded") === "false") {
+    this.setAttribute("aria-expanded", "true");
   } else {
-    this.setAttribute('aria-expanded', 'true');
-    menuButtonLabel.innerHTML = 'Close main menu';
-  }
+    this.setAttribute("aria-expanded", "false");
+  };
 });
 
-// Toggle mobile submenu
+// Toggle submenu
 
-const submenuButtons = document.querySelectorAll('.main-nav__submenu-toggle');
+// const submenuButtons = document.querySelectorAll(".main-nav ul button");
 
-submenuButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    button.classList.toggle('main-nav__submenu-toggle--is-active');
-  });
-});
+// submenuButtons.forEach(button => {
+//   button.addEventListener("click", function () {
+//     if (this.getAttribute("aria-expanded") === "false") {
+//       this.setAttribute("aria-expanded", "true");
+//     } else {
+//       this.setAttribute("aria-expanded", "false");
+//     };
+//   });
+// });
 
-// Get height of site header
+// Get height of site header and position hamburger menu
 
-const siteHeader = document.querySelector('.site-header');
+const siteHeader = document.querySelector(".site-header");
 const height = siteHeader.offsetHeight;
-const navList = document.querySelector('.main-nav__list');
+const hamburgerMenu = document.querySelector(".main-nav > ul");
 
-navList.style.top = `${height}px`;
+hamburgerMenu.style.top = `${height}px`;
