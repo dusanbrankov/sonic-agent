@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .hero {
 
@@ -64,7 +64,7 @@
 
   &::after {
     display: inline-block;
-    content: '›';
+    content: "›";
     margin-inline: 5px;
     font-size: 14px;
     font-weight: 700;
@@ -118,7 +118,7 @@
     align-items: flex-start;
 
     &::before {
-      content: url('../assets/img/list-bullet-check.svg');
+      content: url("../assets/img/list-bullet-check.svg");
     }
   }
 

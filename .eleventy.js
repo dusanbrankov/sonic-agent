@@ -1,8 +1,8 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget('./src/scss/');
-  eleventyConfig.addWatchTarget('./src/js/');
+  eleventyConfig.addWatchTarget("./src/scss/");
+  eleventyConfig.addWatchTarget("./src/js/");
   eleventyConfig.addPassthroughCopy("./src/js/");
   eleventyConfig.addPassthroughCopy("./src/assets/");
 
@@ -12,10 +12,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  const slugify = require('slugify');
-  eleventyConfig.addFilter('slug', (str) => {
+  const slugify = require("slugify");
+  eleventyConfig.addFilter("slug", (str) => {
     if (!str) {
       return;
     };
@@ -28,8 +28,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: 'src',
-      output: 'dist',
+      input: "src",
+      output: "dist",
     },
   };
 };

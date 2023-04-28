@@ -24,13 +24,13 @@
 </head>
 <body>
 
-  {% include 'header.njk' %}
+  {% include "header.njk" %}
 
   <main>
     {{ content | safe }}
   </main>
 
-  {% include 'footer.njk' %}
+  {% include "footer.njk" %}
 
   <script src="{{ '/js/main.js' | url }}" defer></script>
   
