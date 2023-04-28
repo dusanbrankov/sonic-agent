@@ -1,31 +1,30 @@
 <nav class="main-nav" aria-label="main">
-  <button class="main-nav__menu-toggle" aria-controls="main-menu" aria-expanded="false">
-    <span class="main-nav__menu-toggle-label sr-only">Open main menu</span>
-    <span class="main-nav__menu-toggle-icon"></span>
+  <button aria-label="open menu" aria-expanded="false" aria-controls="main-menu">
+    <span></span>
   </button>
   {% set navPages = collections.all | eleventyNavigation %}
   {% macro renderNavListItem(entry) -%}
-  <li class="main-nav__item {% if entry.children.length %}main-nav__item--has-submenu{% endif %}" {% if entry.url == page.url %} aria-current="page" {% endif %}>
-    {%- if entry.children.length -%}
-    <button class="main-nav__submenu-toggle">
-      <span class="main-nav__submenu-toggle-label">{{ entry.title }}</span>
-      <svg class="main-nav__submenu-toggle-icon" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 48" aria-hidden="true"><defs><clipPath clipPathUnits="userSpaceOnUse" id="a"><path d="M0 .43h600v350H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(.13333 0 0 -.13333 0 48)"><path d="M298.59 10c-10.699 0-21.399 4.102-29.531 12.23L12.269 279.02c-16.37 16.371-16.37 42.859 0 59.179 16.32 16.289 42.81 16.289 59.141 0L298.59 110.98l227.23 227.18c16.328 16.328 42.809 16.328 59.141 0 16.328-16.32 16.328-42.808 0-59.14L328.16 22.23C320.039 14.06 309.301 10 298.59 10Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none"/></g></svg>
-    </button>
+    {% if entry.children.length %}
+      <li data-state="has-sub-menu">
+        <button aria-label="open sub menu" aria-expanded="false" aria-controls="sub-menu">
+          <span>{{ entry.title }}</span>
+          <svg aria-hidden="true" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 48"><defs><clipPath clipPathUnits="userSpaceOnUse" id="a"><path d="M0 .43h600v350H0Z"/></clipPath></defs><g clip-path="url(#a)" transform="matrix(.13333 0 0 -.13333 0 48)"><path d="M298.59 10c-10.699 0-21.399 4.102-29.531 12.23L12.269 279.02c-16.37 16.371-16.37 42.859 0 59.179 16.32 16.289 42.81 16.289 59.141 0L298.59 110.98l227.23 227.18c16.328 16.328 42.809 16.328 59.141 0 16.328-16.32 16.328-42.808 0-59.14L328.16 22.23C320.039 14.06 309.301 10 298.59 10Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none"/></g></svg>
+        </button>
+        <ul id="sub-menu" role="list">
+          {%- for child in entry.children %}
+            {{ renderNavListItem(child) }}
+          {% endfor -%}
+        </ul>
+      </li>
     {% else %}
-    <a class="main-nav__link" href="{{ entry.url }}">{{ entry.title }}</a>
+      <li>
+        <a href="{{ entry.url }}" {% if entry.url == page.url %} aria-current="page" {% endif %}>{{ entry.title }}</a>
+      </li>
     {%- endif -%}
-    {%- if entry.children.length -%}
-    <ul class="main-nav__list main-nav__list--has-submenu" role="list">
-      {%- for child in entry.children %}
-      {{ renderNavListItem(child) }}
-      {% endfor -%}
-    </ul>
-    {%- endif -%}
-  </li>
   {%- endmacro %}
-  <ul id="main-menu" class="main-nav__list" role="list">
+  <ul id="main-menu" role="list">
     {%- for entry in navPages %}
-    {{ renderNavListItem(entry) }}
+      {{ renderNavListItem(entry) }}
     {%- endfor -%}
   </ul>
 </nav>

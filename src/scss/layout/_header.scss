@@ -3,11 +3,10 @@
 .site-header {
   background-color: $color-primary-1;
 
-  & > :where(.wrapper) {
+  .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // height: clamp(3.4375rem, 10vw, 4.25rem);
   }
 }
 
