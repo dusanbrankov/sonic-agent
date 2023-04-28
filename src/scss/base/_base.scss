@@ -32,3 +32,8 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+
+:focus-visible {
+  outline: 1px dotted red;
+  outline-offset: 0.2rem;
+}
