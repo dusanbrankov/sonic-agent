@@ -133,10 +133,13 @@
 /* Sub links */
 
 .main-nav ul :where(a, button) {
-  display: block;
-  padding: $space-xs;
-  border-bottom: 1px solid currentColor;
   user-select: none;
+
+  @include media-max($screen-m) {
+    display: block;
+    padding: $space-xs;
+    border-bottom: 1px solid currentColor;
+  }
 
   @include media-max($screen-m) {
     padding-block: $space-xs;
