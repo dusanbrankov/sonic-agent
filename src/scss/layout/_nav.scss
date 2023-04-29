@@ -61,12 +61,15 @@
   }
 }
 
-.main-nav {
-  > ul {
-    display: none;
+.main-nav > {
+  ul {
+    display: flex;
 
     @include media-max($screen-m) {
       flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition-1, visibility $transition-1;
       position: absolute;
       inset-inline: 0;
       z-index: 999;
@@ -75,14 +78,14 @@
     }
 
     @include media-min($screen-m) {
-      display: flex;
       column-gap: $space-s;
     }
   }
 
-  > button[aria-expanded="true"] + ul {
+  button[aria-expanded="true"] + ul {
     @include media-max($screen-m) {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
