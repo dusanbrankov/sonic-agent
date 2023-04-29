@@ -41,3 +41,13 @@ address {
 .logo {
   width: clamp(170px, 30vw, 220px);
 }
+
+.button {
+  display: inline-block;
+  font-size: $step--1;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  padding: 0.9em 2.4em;
+  border-radius: $border-radius;
+}
