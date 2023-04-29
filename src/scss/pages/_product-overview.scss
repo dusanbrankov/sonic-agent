@@ -1,36 +1,35 @@
 @use "../abstracts" as *;
 
-.hero {
-
-  .wrapper {
+.hero {  
+  > .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%,410px), 1fr));
     gap: $space-m;
   }
+}
 
-  &__content {
-
+.hero > .wrapper > {
+  div {
     @include media-min($screen-m) {
       margin-block-start: $space-l;
     }
+
+    h1 {
+      font-size: $step-3;
+      line-height: 1.2;
+      margin-block-end: $space-s;
+    }
+    
+    p {
+      font-size: $step--1;
+      line-height: 1.7;
+    }
   }
   
-  &__title {
-    font-size: $step-3;
-    line-height: 1.2;
-    margin-block-end: $space-s;
-  }
-  
-  &__text {
-    font-size: $step--1;
-    line-height: 1.7;
-  }
-  
-  &__img {
-  
-    & img {
+  picture {
+    img {
       width: 100%;
-      border-radius: 0.625rem;
+      border-radius: $border-radius;
       aspect-ratio: 3 / 2;
       object-fit: cover;
     }
@@ -45,27 +44,27 @@
   font-size: $step--2;
   line-height: 1;
   margin-block-end: $space-l;
-}
 
-.breadcrumbs ol {
-  display: flex;
-}
-
-.breadcrumbs li {
-  align-self: baseline;
-
-  &:last-child {
-    font-weight: 700;
+  ol {
+    display: flex;
   }
 
-  &:not(:last-child) a {
-    text-decoration: underline;
+  li {
+    align-self: baseline;
   
-    &::after {
-      content: "›";
-      display: inline-block;
+    &:last-child {
       font-weight: 700;
-      margin-inline: 0.4em;
+    }
+  
+    &:not(:last-child) a {
+      text-decoration: underline;
+    
+      &::after {
+        content: "›";
+        display: inline-block;
+        font-weight: 700;
+        margin-inline: 0.4em;
+      }
     }
   }
 }
@@ -81,7 +80,7 @@
   display: flex;
   flex-direction: column;
   background-color: $color-neutral-4;
-  border-radius: 0.625rem;
+  border-radius: $border-radius;
   overflow: hidden;
 }
 
@@ -143,13 +142,8 @@
 
   & > a {
     display: block;
-    font-size: $step--1;
-    font-weight: 700;
-    color: #333;
-    text-align: center;
-    padding-block: $space-2xs;
-    border-radius: 0.375rem;
-    background-color: #f5ce0a;
+    color: $color-neutral-3;   
+    background-color: #f5ce0c;
   }
 }
 
@@ -166,21 +160,18 @@
 }
 
 .promo__link {
-  display: inline-block;
-  font-size: $step--1;
-  font-weight: 700;
-  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.044em;
   color: $color-neutral-1;
-  padding: 1em 2em 1em;
-  border: 1px solid $color-neutral-1;
-  border-radius: 0.375rem;
-  background: $color-neutral-4;
+  // padding: 1em 2em 1em;
+  border: 2px solid $color-neutral-1;
+  border-radius: 100vmax;
+  background-color: black;
+  transition-duration: 400ms;
 
   &:hover {
-    border-color: $color-primary-1;
-    color: $color-primary-1;
-    transition:
-      border-color 200ms ease,
-      color 200ms ease;
+    box-shadow: 0px 0px 8px 3px rgba(242, 242, 242, 0.15);
+    transform: scale(1.12);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   }
 }

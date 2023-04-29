@@ -4,11 +4,11 @@ layout: "base.njk"
 
 <header class="hero region">
   <div class="wrapper">
-    <div class="hero__content">
-      <h1 class="hero__title">{{ title }}</h1>
-      <p class="hero__text">{{ description }}</p>
+    <div>
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
     </div>
-    <picture class="hero__img">
+    <picture>
       <source srcset="/assets/img/{{ image }}.avif" type="image/avif">
       <source srcset="/assets/img/{{ image }}.webp" type="image/webp">
       <img src="/assets/img/{{ image }}.jpg" alt="">
@@ -43,7 +43,7 @@ layout: "base.njk"
     <div class="promo">
       <h2 class="promo__title">Get a customized offer</h2>
       <p class="promo__text">Get in touch with us today to see for yourself how our <strong>dependable</strong> and <strong>professional</strong> team can help ensure your event to be both <strong>seamless</strong> and <strong>memorable</strong>.</p>
-      <a href="#0" class="promo__link">Let's talk!</a>
+      <a href="#0" class="promo__link button">Let's talk!</a>
     </div>
 
   </div>
