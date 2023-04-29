@@ -21,10 +21,6 @@ a {
   text-decoration: none;
 }
 
-address {
-  font-style: normal;
-}
-
 button {
   color: inherit;
   padding: 0;
@@ -33,7 +29,15 @@ button {
   cursor: pointer;
 }
 
+address {
+  font-style: normal;
+}
+
 :focus-visible {
   outline: 1px dotted red;
   outline-offset: 0.2rem;
+}
+
+.logo {
+  width: clamp(170px, 30vw, 220px);
 }
