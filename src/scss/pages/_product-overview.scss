@@ -65,6 +65,11 @@
         font-weight: 700;
         margin-inline: 0.4em;
       }
+
+      &:hover {
+        color: $color-neutral-99;
+        transition: color $transition-basic;
+      } 
     }
   }
 }
@@ -144,6 +149,11 @@
     display: block;
     color: $color-neutral-3;   
     background-color: #f5ce0c;
+
+    &:hover {
+      background-color: darken($color-primary-1, 5%);
+      transition: background-color $transition-basic;
+    } 
   }
 }
 

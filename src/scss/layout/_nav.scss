@@ -133,6 +133,13 @@
   }
 }
 
+/* All links */
+
+.main-nav a:hover {
+  color: black;
+  transition: color $transition-1;
+}
+
 /* Sub links */
 
 .main-nav ul :where(a, button) {
