@@ -2,7 +2,7 @@
 
 .hero {
 
-  & > :where(.wrapper) {
+  .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%,410px), 1fr));
     gap: $space-m;
@@ -42,32 +42,31 @@
 }
 
 .breadcrumbs {
+  font-size: $step--2;
+  line-height: 1;
   margin-block-end: $space-l;
 }
 
 .breadcrumbs ol {
   display: flex;
-  align-items: last baseline;
-  font-size: 0;
 }
 
 .breadcrumbs li {
-  font-size: $step--2;
+  align-self: baseline;
 
   &:last-child {
     font-weight: 700;
   }
-}
 
-.breadcrumbs a {
-  text-decoration: underline;
-
-  &::after {
-    display: inline-block;
-    content: "›";
-    margin-inline: 5px;
-    font-size: 14px;
-    font-weight: 700;
+  &:not(:last-child) a {
+    text-decoration: underline;
+  
+    &::after {
+      content: "›";
+      display: inline-block;
+      font-weight: 700;
+      margin-inline: 0.4em;
+    }
   }
 }
 
