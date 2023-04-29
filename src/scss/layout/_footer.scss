@@ -16,7 +16,7 @@ body {
 .site-footer {
   font-size: $step--2;
 
-  & :where(.wrapper) {
+  .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%,200px), 1fr));
     gap: $space-s;
@@ -30,14 +30,10 @@ body {
 .site-footer__header {
   background-color: $color-neutral-1;
 
-  & :where(.wrapper) {
+  .wrapper {
     display: flex;
     justify-content: space-between;
   }
-}
-
-.site-footer__header-logo {
-  width: clamp(170px, 30vw, 220px);
 }
 
 .site-footer__social {
