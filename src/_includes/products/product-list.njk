@@ -3,12 +3,12 @@ layout: "base.njk"
 ---
 
 <header class="hero region">
-  <div class="wrapper">
-    <div>
+  <div class="wrapper auto-grid">
+    <div class="hero__copy">
       <h1>{{ title }}</h1>
       <p>{{ description }}</p>
     </div>
-    <picture>
+    <picture class="hero__image">
       <source srcset="/assets/img/{{ image }}.avif" type="image/avif">
       <source srcset="/assets/img/{{ image }}.webp" type="image/webp">
       <img src="/assets/img/{{ image }}.jpg" alt="">
@@ -16,8 +16,8 @@ layout: "base.njk"
   </div>
 </header>
 
-<div class="products region">
-  <div class="wrapper">
+<div class="region--lg bg-neutral-3">
+  <div class="wrapper flow">
 
     <nav class="breadcrumbs" aria-label="breadcrumbs">
       <ol role="list">
@@ -36,15 +36,17 @@ layout: "base.njk"
       </ol>
     </nav>
 
-    <div class="products__list">
+    <article class="auto-grid">
       {{ content | safe }}
-    </div>
-      
+    </article>
+
     <div class="promo">
+    <div class="wrapper">
       <h2 class="promo__title">Get a customized offer</h2>
-      <p class="promo__text">Get in touch with us today to see for yourself how our <strong>dependable</strong> and <strong>professional</strong> team can help ensure your event to be both <strong>seamless</strong> and <strong>memorable</strong>.</p>
-      <a href="#0" class="promo__link button">Let's talk!</a>
+      <p class="promo__text">Get in touch with us today to see for yourself how our dependable and professional team can help ensure your event to be both seamless and memorable.</p>
+      <a href="#0" class="promo__link btn">Let's talk!</a>
     </div>
+  </div>
 
   </div>
 </div>

@@ -1,9 +1,8 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/scss/");
-  eleventyConfig.addWatchTarget("./src/js/");
-  eleventyConfig.addPassthroughCopy("./src/js/");
+  // eleventyConfig.addWatchTarget("./src/assets/scss/");
+  eleventyConfig.addWatchTarget("./src/assets/js/");
   eleventyConfig.addPassthroughCopy("./src/assets/");
 
   eleventyConfig.setBrowserSyncConfig({

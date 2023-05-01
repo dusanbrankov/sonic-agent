@@ -3,17 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "license": "ISC",
   "author": "Dusan Brankov <dusanbrankov@proton.me>",
   "main": "index.html",
   "scripts": {
-    "watch:sass": "sass --no-source-map --watch ./src/scss:dist/css",
+    "watch:sass": "sass --no-source-map --watch src/assets/sass/index.scss:dist/assets/css/style.css",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass --no-source-map ./src/scss:dist/css",
+    "build:sass": "sass --no-source-map src/assets/sass/index.scss:dist/assets/css/style.css",
     "build:eleventy": "eleventy",
     "start": "rm -r dist/ && npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
-    "postbuild": "postcss ./dist/css/*.css -u postcss-preset-env cssnano -r --no-map"
+    "postbuild": "postcss dist/assets/css/*.css -u postcss-preset-env cssnano -r --no-map"
   },
   "browserslist": [
     "> 0.2% and not dead"

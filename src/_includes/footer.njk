@@ -1,6 +1,7 @@
 <footer class="site-footer">
-  <div class="site-footer__header region--small">
-    <div class="wrapper">
+
+  {# <div class="region--sm bg-neutral-1">
+    <div class="wrapper auto-flex">
       <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170.4 30" aria-hidden="true">
         <style>
           .a {
@@ -41,10 +42,10 @@
         </ul>
       </div>
     </div>
-  </div>
-
-  {# <p>&copy; {% year %}</p> #}
+  </div> #}
+  
   <div class="wrapper region">
+
     <address class="site-footer__contact">
       <div class="site-footer__physical-address">
         <b>Sonic Agent d.o.o.</b><br>
@@ -52,25 +53,44 @@
         11090 Belgrade, Serbia
       </div>
       <div class="site-footer__contact-links">
-        <a href="mailto:office@sonic-agent.com">office@sonic-agent.com</a><br>
+        <a href="mailto:office@sonic-agent.com">office@sonic-agent.com</a>
         <a href="tel:+38163327747">+381 63 327 747</a>
       </div>
     </address>
-    <div class="site-footer__nav">
-      <h2>Company</h2>
-      <ul role="list">
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/imprint">Imprint</a></li>
-      </ul>
+
+    <div class="site-footer__nav auto-grid">
+
+      <div>
+        <h2>Company</h2>
+        <ul role="list">
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/imprint">Imprint</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Services</h2>
+        <ul role="list">
+          <li><a href="#0">Rental</a></li>
+          <li><a href="#0">Services</a></li>
+          <li><a href="#0">Booking</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Connect</h2>
+        <ul role="list">
+          <li><a href="#0">Facebook</a></li>
+          <li><a href="#0">Instagram</a></li>
+          <li><a href="#0">LinkedIn</a></li>
+        </ul>
+      </div>
+
     </div>
-    <div class="site-footer__nav">
-      <h2>Services</h2>
-      <ul role="list">
-        <li><a href="#0">Rental</a></li>
-        <li><a href="#0">Services</a></li>
-        <li><a href="#0">Booking</a></li>
-      </ul>
-    </div>
+
   </div>
+
+  {# <p>&copy; {% year %}</p> #}
+
 </footer>
