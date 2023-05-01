@@ -1,0 +1,102 @@
+@use "../abstracts" as *;
+
+/* # COLORS
+↓  ----------------------------------------------------- */
+
+.bg-primary {
+  background-color: $clr-primary;
+}
+
+.bg-neutral-1 {
+  background-color: $clr-neutral-1;
+}
+
+.bg-neutral-2 {
+  background-color: $clr-neutral-2;
+}
+
+.bg-neutral-3 {
+  background-color: $clr-neutral-3;
+}
+
+.bg-neutral-4 {
+  background-color: $clr-neutral-4;
+}
+
+/* # LAYOUT
+↓  ----------------------------------------------------- */
+
+.wrapper {
+max-width: 85rem;
+margin-inline: auto;
+padding-inline: $wrapper-padding;
+}
+
+/* vertical spacing around page sections */
+
+.region {
+  padding-block: var(--space-l);
+
+  &--sm {
+    padding-block: var(--space-xs);
+  }
+
+  &--lg {
+    padding-block: var(--space-xl);
+  }
+}
+
+/* vertical spacing between child elements */
+
+.flow > * + * {
+  margin-top: var(--flow-space, var(--space-l));
+}
+
+/* grid layout defaults */
+
+.auto-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(var(--auto-grid-placement, auto-fill),
+    minmax(min(100%, var(--auto-grid-min-size, 22.5rem)), 1fr));
+  gap: var(--auto-grid-gap, var(--space-s));
+}
+
+/* flex layout defaults */
+
+.auto-flex {
+  display: flex;
+  align-items: var(--auto-flex-align, center);
+  justify-content: var(--auto-flex-justify, space-between);
+  gap: var(--auto-flex-gap, 0);
+}
+
+/* # COMPONENTS
+↓  ----------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  font-size: var(--step--1);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  padding: 0.9em 2.4em;
+  border-radius: $border-radius;
+  user-select: none;
+}
+
+/* # ACCESSIBILITY
+↓  ----------------------------------------------------- */
+
+/* hide element visually, but keep it
+   accessible for screen readers */
+
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
