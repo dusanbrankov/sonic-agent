@@ -6,11 +6,12 @@
   "author": "Dusan Brankov <dusanbrankov@proton.me>",
   "main": "index.html",
   "scripts": {
-    "watch:sass": "sass --no-source-map --watch src/assets/sass/index.scss:dist/assets/css/style.css",
+    "watch:sass": "sass --no-source-map --watch src/assets/sass/index.scss:dist/assets/css/styles.css",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "sass --no-source-map src/assets/sass/index.scss:dist/assets/css/style.css",
+    "build:sass": "sass --no-source-map src/assets/sass/index.scss:dist/assets/css/styles.css",
     "build:eleventy": "eleventy",
-    "start": "rm -r dist/ && npm-run-all build:sass --parallel watch:*",
+    "bash:rm-dist": "test -d 'dist/' && rm -r dist/",
+    "start": "npm run bash:rm-dist && npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
     "postbuild": "postcss dist/assets/css/*.css -u postcss-preset-env cssnano -r --no-map"
   },
