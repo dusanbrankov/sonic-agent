@@ -1,35 +1,33 @@
-@use "../abstracts" as *;
-
 /* # COLORS
 ↓  ----------------------------------------------------- */
 
 .bg-primary {
-  background-color: $clr-primary;
+  background-color: var(--clr-primary);
 }
 
 .bg-neutral-1 {
-  background-color: $clr-neutral-1;
+  background-color: var(--clr-neutral-1);
 }
 
 .bg-neutral-2 {
-  background-color: $clr-neutral-2;
+  background-color: var(--clr-neutral-2);
 }
 
 .bg-neutral-3 {
-  background-color: $clr-neutral-3;
+  background-color: var(--clr-neutral-3);
 }
 
 .bg-neutral-4 {
-  background-color: $clr-neutral-4;
+  background-color: var(--clr-neutral-4);
 }
 
 /* # LAYOUT
 ↓  ----------------------------------------------------- */
 
 .wrapper {
-max-width: 85rem;
+max-inline-size: 85rem;
 margin-inline: auto;
-padding-inline: $wrapper-padding;
+padding-inline: var(--wrapper-padding);
 }
 
 /* vertical spacing around page sections */
@@ -38,7 +36,7 @@ padding-inline: $wrapper-padding;
   padding-block: var(--space-l);
 
   &--sm {
-    padding-block: var(--space-xs);
+    padding-block: var(--space-s);
   }
 
   &--lg {
@@ -49,7 +47,7 @@ padding-inline: $wrapper-padding;
 /* vertical spacing between child elements */
 
 .flow > * + * {
-  margin-top: var(--flow-space, var(--space-l));
+  margin-block-start: var(--flow-space, var(--space-l));
 }
 
 /* grid layout defaults */
@@ -57,39 +55,16 @@ padding-inline: $wrapper-padding;
 .auto-grid {
   display: grid;
   grid-template-columns:
-    repeat(var(--auto-grid-placement, auto-fill),
-    minmax(min(100%, var(--auto-grid-min-size, 22.5rem)), 1fr));
+    repeat(var(--auto-grid-placement, auto-fit),
+    minmax(min(100%, var(--auto-grid-min-size, 18.75rem)), 1fr));
   gap: var(--auto-grid-gap, var(--space-s));
-}
-
-/* flex layout defaults */
-
-.auto-flex {
-  display: flex;
-  align-items: var(--auto-flex-align, center);
-  justify-content: var(--auto-flex-justify, space-between);
-  gap: var(--auto-flex-gap, 0);
-}
-
-/* # COMPONENTS
-↓  ----------------------------------------------------- */
-
-.btn {
-  display: inline-block;
-  font-size: var(--step--1);
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  padding: 0.9em 2.4em;
-  border-radius: $border-radius;
-  user-select: none;
 }
 
 /* # ACCESSIBILITY
 ↓  ----------------------------------------------------- */
 
-/* hide element visually, but keep it
-   accessible for screen readers */
+/* hide element visually, but keep it accessible
+   for screen reader users */
 
 .sr-only {
   position: absolute;

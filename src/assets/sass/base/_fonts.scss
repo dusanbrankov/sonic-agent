@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 @font-face {
-  font-family: $base-font;
+  font-family: "Inter";
   src:
     url("../fonts/Inter-Regular.woff2") format("woff2"),
     url("../fonts/Inter-Regular.ttf") format("truetype");
@@ -11,7 +11,7 @@
 }
 
 @font-face {
-  font-family: $base-font;
+  font-family: "Inter";
   src:
     url("../fonts/Inter-Medium.woff2") format("woff2"),
     url("../fonts/Inter-Medium.ttf") format("truetype");
@@ -21,7 +21,7 @@
 }
 
 @font-face {
-  font-family: $base-font;
+  font-family: "Inter";
   src:
     url("../fonts/Inter-SemiBold.woff2") format("woff2"),
     url("../fonts/Inter-SemiBold.ttf") format("truetype");
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: $base-font;
+  font-family: "Inter";
   src:
     url("../fonts/Inter-Bold.woff2") format("woff2"),
     url("../fonts/Inter-Bold.ttf") format("truetype");
@@ -41,7 +41,7 @@
 }
 
 @font-face {
-  font-family: $base-font;
+  font-family: "Inter";
   src:
     url("../fonts/Inter-ExtraBold.woff2") format("woff2"),
     url("../fonts/Inter-ExtraBold.ttf") format("truetype");
@@ -51,7 +51,7 @@
 }
 
 @font-face {
-  font-family: $base-font;
+  font-family: "Inter";
   src:
     url("../fonts/Inter-Black.woff2") format("woff2"),
     url("../fonts/Inter-Black.ttf") format("truetype");

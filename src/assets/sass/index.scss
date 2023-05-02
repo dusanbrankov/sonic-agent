@@ -1,15 +1,20 @@
 @charset "utf-8";
 
-@use "abstracts/variables-css";
-@use "base/reset";
+@use "base/custom-props";
 @use "base/fonts";
+@use "base/normalize";
+@use "base/reset";
 @use "base/general";
+@use "base/defaults";
 @use "base/utilities";
 
-@use "sitewide/header";
-@use "sitewide/header-nav";
-@use "sitewide/footer";
+@use "blocks/site-header";
+@use "blocks/main-nav";
+@use "blocks/site-footer";
+@use "blocks/hero";
+@use "blocks/breadcrumbs";
+@use "blocks/card";
+@use "blocks/promo";
 
 @use "pages/home";
 @use "pages/contact";
-@use "pages/product-overview";

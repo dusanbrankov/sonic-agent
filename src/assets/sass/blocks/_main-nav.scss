@@ -1,0 +1,125 @@
+@use "../abstracts" as *;
+
+.main-nav__menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
+
+  @include media(">=medium") {
+    display: none;
+  }
+}
+
+.main-nav__menu-btn span {
+  &, &::before, &::after {
+    display: block;
+    width: var(--menu-line-width);
+    height: var(--menu-line-height);
+    background-color: var(--clr-neutral-4);
+    border-radius: 100vmax;
+  }
+  
+  &::before, &::after {
+    content: "";
+    transition: transform var(--trans-1);
+  }
+
+  &::before {
+    transform: translateY(calc(
+      -1 * (var(--menu-line-space) + var(--menu-line-height)
+    )));
+  }
+
+  &::after {
+    transform: translateY(var(--menu-line-space));
+  }
+}
+
+.main-nav__menu-btn[aria-expanded="true"] span {
+  height: 0;
+
+  &::before {
+    transform: translateY(-2px) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+.main-nav__menu {
+  display: flex;
+  font-weight: 600;
+  color: var(--clr-neutral-3);
+
+  @include media("<medium") {
+    flex-direction: column;
+    position: absolute;
+    inset-inline: 0;
+    z-index: 999;
+    font-size: var(--step-1);
+    background-color: var(--clr-primary-light);
+    border-block-start: 1px solid currentColor;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--trans-1),
+      visibility var(--trans-1);
+
+    .main-nav__menu-btn[aria-expanded="true"] + & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include media(">=medium") {
+    gap: var(--space-s);
+  }
+}
+
+.main-nav__menu a {
+  display: block;
+}
+
+.main-nav__menu :where(a, button) {
+  @include media("<medium") {
+    padding-block: var(--space-xs);
+    padding-inline: var(--wrapper-padding);
+    border-bottom: 1px solid currentColor;
+  }
+}
+
+.main-nav__menu-item--has-submenu {
+  @include media(">=medium") {
+    position: relative;
+  }
+}
+
+.main-nav__submenu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  inline-size: 100%;
+
+  svg {
+    fill: #212121;
+    inline-size: 14px;
+    height: auto;
+  }
+}
+
+.main-nav__submenu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  z-index: 999;
+  min-width: 14.25rem;
+  border: 1px solid var(--clr-neutral-2);
+
+  .main-nav__submenu-btn[aria-expanded="true"] + & {
+    display: flex;
+  }
+}

@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.site-header {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: clamp(10.625rem, 30vw, 13.75rem);
+  }
+}

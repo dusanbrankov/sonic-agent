@@ -1,6 +1,6 @@
 // Toggle hamburger menu
 
-const menuButton = document.querySelector(".main-menu-btn");
+const menuButton = document.querySelector(".main-nav__menu-btn");
 
 menuButton.addEventListener("click", function () {
   if (this.getAttribute("aria-expanded") === "false") {
@@ -28,6 +28,6 @@ menuButton.addEventListener("click", function () {
 
 const siteHeader = document.querySelector(".site-header");
 const height = siteHeader.offsetHeight;
-const mainMenu = document.querySelector(".main-menu");
+const mainMenu = document.querySelector(".main-nav__menu");
 
 mainMenu.style.top = `${height}px`;

@@ -1,0 +1,30 @@
+/* sticky footer */
+
+body { 
+  display: flex;
+  flex-direction: column;
+  
+  > footer { 
+    margin-top: auto;
+  }
+}
+
+/* prevent users from accidentally selecting text
+   on clickable elements */
+
+.main-nav :where(a, button),
+.site-footer__nav a,
+.breadcrumbs a,
+.btn {
+  user-select: none;
+}
+
+/* default styles for button or button-like anchor
+   elements */
+
+.btn {
+  display: inline-block;
+  font-size: var(--step-0);
+  line-height: 1;
+  text-align: center;
+}

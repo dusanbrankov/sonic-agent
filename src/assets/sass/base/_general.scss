@@ -1,27 +1,23 @@
 @use "../abstracts" as *;
 
 body {
-  font-family: $font-stack;
-  font-size: var(--step--1);
+  font-family: var(--font-stack);
+  font-size: var(--step-0);
   font-weight: 400;
-  line-height: 1.5;
-  color: $clr-neutral-1;
-  background-color: $clr-neutral-4;
+  line-height: 1.7;
+  color: var(--clr-neutral-1);
+  background-color: var(--clr-neutral-4);
   /* scrollbar-color: color bgcolor; */
 }
 
 /* ::selection { ... } */
 
-h1 {
-  font-weight: 600;
+h1, h2, h3, h4 {
+  line-height: 1.2;
 }
 
 h2, h3, h4 {
   font-weight: 400;
-}
-
-h1, h2, h3, h4 {
-  line-height: 1.2;
 }
 
 a {
@@ -42,10 +38,6 @@ address {
 }
 
 :focus-visible {
-  outline: 1px dotted red;
+  outline: 1px dotted var(--clr-primary);
   outline-offset: 0.2rem;
-}
-
-.logo {
-  width: clamp(170px, 30vw, 220px);
 }

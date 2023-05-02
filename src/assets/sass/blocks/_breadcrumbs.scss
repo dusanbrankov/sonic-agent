@@ -1,0 +1,23 @@
+.breadcrumbs ol {
+  display: flex;
+  align-items: baseline;
+  font-size: var(--step--1);
+}
+
+.breadcrumbs li {
+  &:last-child {
+    font-weight: 600;
+  }
+
+  &:not(:last-child) a {
+    text-decoration: underline;
+    text-underline-offset: 0.1875rem;
+  
+    &::after {
+      content: "›";
+      display: inline-block;
+      font-weight: 600;
+      margin-inline: 0.4em;
+    }
+  }
+}
