@@ -10,10 +10,9 @@
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass --no-source-map src/assets/sass/index.scss:dist/assets/css/styles.css",
     "build:eleventy": "eleventy",
-    "custom:rm-dist": "test -d 'dist/' && rm -r dist/",
-    "custom:add-dist": "mkdir -p dist/",
-    "start": "npm run custom:rm-dist && npm-run-all build:sass --parallel watch:*",
-    "build": "npm run custom:add-dist && npm-run-all build:*",
+    "bash:rm-dist": "test -d 'dist/' && rm -r dist/",
+    "start": "npm run bash:rm-dist && npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*",
     "postbuild": "postcss dist/assets/css/styles.css -u autoprefixer cssnano -r --no-map"
   },
   "browserslist": [
