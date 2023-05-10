@@ -1,6 +1,7 @@
 @use "../abstracts" as *;
 
 .site-header {
+  padding-block: 1rem;
   &__inner {
     display: flex;
     align-items: center;
