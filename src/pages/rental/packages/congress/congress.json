@@ -1,5 +1,5 @@
 {
-  "permalink": "/rental/packages/congress/{{ title | slugify }}/",
+  "permalink": "/packages/congress/{{ title | slugify }}/",
   "tags": [
     "congress"
   ]

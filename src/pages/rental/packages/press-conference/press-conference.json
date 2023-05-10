@@ -1,5 +1,5 @@
 {
-  "permalink": "/rental/packages/press-conference/{{ title | slugify }}/",
+  "permalink": "/packages/press-conference/{{ title | slugify }}/",
   "tags": [
     "press_conference"
   ]
