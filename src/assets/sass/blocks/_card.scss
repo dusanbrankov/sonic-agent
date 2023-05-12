@@ -38,10 +38,11 @@
 
 .card__title {
   font-size: var(--step-1);
-  font-weight: 600;
+  font-weight: 500;
 
   a:hover {
-    text-decoration: underline 0.125rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem;
     text-underline-offset: 0.3125rem;
   }
 }
