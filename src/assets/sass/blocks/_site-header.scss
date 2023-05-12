@@ -1,7 +1,8 @@
 @use "../abstracts" as *;
 
 .site-header {
-  padding-block: 1rem;
+  background-color: var(--clr-primary);
+  padding-block: 0.875rem;
   &__inner {
     display: flex;
     align-items: center;
@@ -9,7 +10,8 @@
   }
 
   &__logo svg {
-    inline-size: clamp(10.625rem, 30vw, 13.75rem);
+    // inline-size: clamp(10.625rem, 30vw, 13.75rem);
+    inline-size: 202px;
     block-size: auto;
   }
 }

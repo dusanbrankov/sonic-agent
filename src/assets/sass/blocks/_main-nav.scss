@@ -51,8 +51,11 @@
 
 .main-nav__menu {
   display: flex;
-  font-weight: 500;
+  // font-weight: 500;
+  // color: var(--clr-neutral-3);
+  font-weight: 600;
   color: var(--clr-neutral-3);
+  font-size: var(--step--1);
 
   @include media("<medium") {
     flex-direction: column;
@@ -82,32 +85,55 @@
 }
 
 .main-nav__menu > li {
-  margin-inline-start: var(--space-2xs);
+  margin-inline-start: var(--space-xs);
 
   &:last-child {
-    margin-inline-start: var(--space-s);
+    margin-inline-start: var(--space-m);
 
     & a {
       padding-inline: 1rem;
       box-shadow: inset 0 0 0 1px var(--clr-neutral-4);
 
       &:hover {
-        color: var(--clr-neutral-1);
+        // color: var(--clr-neutral-1);
         background-color: var(--clr-neutral-4);
+        color: hsl(50, 92.1%, 50.4%);
+        transition: background-color 185ms ease
       }
     }
   }
 }
 
 .main-nav__submenu-container {
-  display: none;
   position: absolute;
   padding-top: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: all 245ms ease-out;
 }
 
 .main-nav__menu-item--has-submenu:hover .main-nav__submenu-container,
 .main-nav__submenu-container:hover {
-    display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+main-nav__submenu.main-nav__submenu a {
+  padding: 18px 28px;
+}
+
+.main-nav__submenu a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  text-decoration-color: hsl(0 0 0 / 0);
+  &:hover {
+    // color: var(--clr-primary);
+    text-decoration-color: var(--clr-primary);
+    transition: all 200ms ease;
+  }
 }
 
 .main-nav__menu a {
@@ -117,14 +143,6 @@
     line-height: 1;
     padding: 0.875rem 0.5rem;
     border-radius: 4px;
-
-    &:hover {
-      background-color: hsl(50deg 92% 25% / 20%);
-
-      /* & + .main-nav__submenu-container {
-        display: block;
-      } */
-    }
   }
 }
 
@@ -175,7 +193,7 @@
   @include media(">=medium") {
     box-sizing: content-box;
     width: max-content;
-    min-width: 200px;
+    min-width: 180px;
     border-radius: 4px;
     // background-color: var(--clr-neutral-4);
     // color: var(--clr-neutral-99);
