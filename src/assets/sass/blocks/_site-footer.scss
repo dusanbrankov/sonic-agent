@@ -3,12 +3,19 @@
 .site-footer {
   font-size: var(--step--1);
 
+  @include media("<medium") {
+    text-align: center;
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: 1fr;
 
     @include media(">=medium") {
       grid-template-columns: 1fr 2fr;
+    }
+    @include media("<medium") {
+      gap: 2rem;
     }
   }
 }
@@ -49,6 +56,10 @@
     text-decoration-color: var(--clr-neutral-99);
     text-underline-offset: 0.1875rem;
 
+    @include media("<medium") {
+      width: unset;
+    }
+
     &:hover {
       color: var(--clr-neutral-99);
     }
@@ -57,6 +68,10 @@
 
 .site-footer__nav {
   --auto-grid-min-size: 9.375rem;
+    @include media("<medium") {
+      --auto-grid-min-size: 100%;
+      gap: 2rem;
+    }
 }
 
 .site-footer__nav > div {
@@ -69,7 +84,7 @@
 
   ul {
     margin-block-start: var(--space-xs);
-    
+
     li:not(:first-child) {
       margin-block-start: var(--space-3xs);
     }
@@ -77,5 +92,5 @@
 
   a:hover {
     color: var(--clr-neutral-99);
-  } 
+  }
 }
