@@ -20,7 +20,7 @@
     background-color: var(--clr-neutral-4);
     border-radius: 100vmax;
   }
-  
+
   &::before, &::after {
     content: "";
     transition: transform var(--trans-1);
@@ -128,7 +128,7 @@ main-nav__submenu.main-nav__submenu a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 8px;
-  text-decoration-color: hsl(0 0 0 / 0);
+  text-decoration-color: hsl(0, 0%, 0%, 0);
   &:hover {
     // color: var(--clr-primary);
     text-decoration-color: var(--clr-primary);

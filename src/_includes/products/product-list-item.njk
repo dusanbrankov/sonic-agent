@@ -1,7 +1,8 @@
 <li>
   <article class="card">
 
-    <a href="{{ i.url }}">
+    {# <a href="{{ i.url }}"> #}
+    <a href="#0">
       <picture class="card__image">
         <source srcset="/assets/img/{{ i.data.thumbnail }}.avif" type="image/avif">
         <source srcset="/assets/img/{{ i.data.thumbnail }}.webp" type="image/webp">
@@ -10,7 +11,7 @@
     </a>
 
     <div class="card__content flow">
-      <h2 class="card__title"><a href="{{ i.url }}">{{ i.data.title }}</a></h2>
+      <h2 class="card__title"><a href="#0">{{ i.data.title }}</a></h2>
       <p class="card__price">{{ i.data.price }} <span>/ day</span></p>
       {# <ul class="card__list" role="list">
         {% for item in i.data.list %}

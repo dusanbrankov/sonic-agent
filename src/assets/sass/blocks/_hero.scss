@@ -7,7 +7,7 @@
 .hero__inner {
   display: grid;
   grid-template-columns: 1fr;
-  // gap: 0; 
+  // gap: 0;
 
   @include media(">=60em") {
     // grid-template-columns: 1fr 1fr;
@@ -39,7 +39,7 @@
 }
 
 .hero__image {
-  width: 900px;
+  max-width: 900px;
   margin-inline: auto;
 
   img {
@@ -51,5 +51,9 @@
     aspect-ratio: 9/3;
     // aspect-ratio: 16/4;
     object-fit: cover;
+
+    @include media("<=500px") {
+      aspect-ratio: 5/3;
+    }
   }
 }
