@@ -12,17 +12,17 @@ menuButton.addEventListener("click", function () {
 
 // Toggle submenu
 
-// const submenuButtons = document.querySelectorAll(".main-nav ul button");
+const submenuButtons = document.querySelectorAll(".main-nav__dropdown");
 
-// submenuButtons.forEach(button => {
-//   button.addEventListener("click", function () {
-//     if (this.getAttribute("aria-expanded") === "false") {
-//       this.setAttribute("aria-expanded", "true");
-//     } else {
-//       this.setAttribute("aria-expanded", "false");
-//     };
-//   });
-// });
+submenuButtons.forEach(button => {
+  button.addEventListener("click", function () {
+    if (this.getAttribute("aria-expanded") === "false") {
+      this.setAttribute("aria-expanded", "true");
+    } else {
+      this.setAttribute("aria-expanded", "false");
+    };
+  });
+});
 
 // Get height of site header and position hamburger menu
 
